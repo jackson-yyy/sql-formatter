@@ -23,12 +23,7 @@ export function createReservedWordRegex(reservedWords) {
 }
 
 export function createWordRegex(specialChars = []) {
-  return new RegExp(
-    `^([\\p{Alphabetic}\\p{Mark}\\p{Decimal_Number}\\p{Connector_Punctuation}\\p{Join_Control}${specialChars.join(
-      ''
-    )}]+)`,
-    'u'
-  );
+  return new RegExp(`^([a-zA-Z_0-9${specialChars.join('')}]+)`, 'u');
 }
 
 export function createStringRegex(stringTypes) {

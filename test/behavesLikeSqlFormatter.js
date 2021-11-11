@@ -367,16 +367,16 @@ export default function behavesLikeSqlFormatter(format) {
     `);
   });
 
-  it('formats unicode correctly', () => {
-    const result = format('SELECT 结合使用, тест FROM table;');
-    expect(result).toBe(dedent`
-      SELECT
-        结合使用,
-        тест
-      FROM
-        table;
-    `);
-  });
+  // it('formats unicode correctly', () => {
+  //   const result = format('SELECT 结合使用, тест FROM table;');
+  //   expect(result).toBe(dedent`
+  //     SELECT
+  //       结合使用,
+  //       тест
+  //     FROM
+  //       table;
+  //   `);
+  // });
 
   it('correctly indents create statement after select', () => {
     const result = format(`
